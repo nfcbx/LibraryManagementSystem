@@ -6,7 +6,7 @@ import com.jdbc.users.User;
 import java.sql.*;
 import java.util.Vector;
 
-import static com.IsOrNot.isInteger;
+import static com.tools.IsOrNot.isInteger;
 
 public class manager_get {
     public static Vector<User> manager_get_users() {

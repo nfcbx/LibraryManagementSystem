@@ -4,11 +4,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static com.IsOrNot.isInteger;
+import static com.tools.IsOrNot.isInteger;
 import static com.jdbc.managers.manager_login.manager_login;
 import static com.jdbc.users.user_login.user_login;
 
 public class Login {
+    public static int u_id;
     static JFrame frame = new JFrame("欢迎使用图书管理系统");
     private JPanel login_panel;
     private JButton login_in;
@@ -60,8 +61,11 @@ public class Login {
                         if (isInteger(String.valueOf(user_id_textField.getText()))) {
                             int id = Integer.parseInt(user_id_textField.getText());
                             String password = String.valueOf(user_passwordField.getPassword());
-                            if (user_login(id, password)) {
-                                System.out.println("用户登录成功");
+                            if (user_login(id, password) != -1) {
+                                u_id = user_login(id, password);
+                                System.out.println("******************");
+                                System.out.println(u_id);
+                                UserBorrowBooks.user_borrow_books_GUI();
                             } else {
                                 JOptionPane.showMessageDialog(null, "用户名或密码不正确", "提示", JOptionPane.WARNING_MESSAGE);
                             }

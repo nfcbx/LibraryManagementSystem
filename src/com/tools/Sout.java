@@ -1,4 +1,4 @@
-package com;
+package com.tools;
 
 import com.jdbc.books.Book;
 import com.jdbc.users.User;

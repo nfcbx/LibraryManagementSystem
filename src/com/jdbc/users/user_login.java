@@ -3,7 +3,7 @@ package com.jdbc.users;
 import java.sql.*;
 
 public class user_login {
-    public static boolean user_login(int user_id, String password) {
+    public static int user_login(int user_id, String password) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet resultSet = null;
@@ -16,11 +16,11 @@ public class user_login {
             if (resultSet.next()) {
                 System.out.println(resultSet.getString(1));
                 if (password.equals(resultSet.getString(1)))
-                    return true;
+                    return user_id;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return -1;
     }
 }

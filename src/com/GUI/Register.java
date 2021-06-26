@@ -4,12 +4,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static com.IsOrNot.isInteger;
+import static com.tools.IsOrNot.isInteger;
 import static com.jdbc.users.user_register.user_register;
 
 public class Register {
     int user_id;
     String user_name, user_password;
+
+    static JFrame frame;
     private JPanel register_panel;
     private JLabel register_label;
     private JPanel register_header;
@@ -49,6 +51,7 @@ public class Register {
 
                     if(user_register(user_id, user_name, user_password)) {
                         JOptionPane.showMessageDialog(null, "注册成功", "提示", JOptionPane.WARNING_MESSAGE);
+                        frame.dispose();
                     } else {
                         JOptionPane.showMessageDialog(null, "注册失败！", "提示", JOptionPane.WARNING_MESSAGE);
                     }
@@ -59,7 +62,7 @@ public class Register {
     }
 
     public static void register_GUI() {
-        JFrame frame = new JFrame("注册");
+        frame = new JFrame("注册");
         frame.setContentPane(new Register().register_panel);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(500, 250);

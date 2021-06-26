@@ -1,6 +1,6 @@
 package com.GUI;
 
-import com.Sout;
+import com.tools.Sout;
 import com.jdbc.users.User;
 
 import javax.swing.*;

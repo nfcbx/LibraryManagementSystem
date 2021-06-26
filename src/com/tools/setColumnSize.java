@@ -1,4 +1,4 @@
-package com.GUI;
+package com.tools;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;

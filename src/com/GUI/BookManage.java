@@ -10,8 +10,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Vector;
 
-import static com.GUI.setColumnSize.setTableColumnSize;
-import static com.IsOrNot.isInteger;
+import static com.tools.setColumnSize.setTableColumnSize;
+import static com.tools.IsOrNot.isInteger;
 import static com.jdbc.managers.manager_get.manager_get_books;
 
 public class BookManage {
